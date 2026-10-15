@@ -2,7 +2,7 @@
 
 Hornet Remote Suite 二进制安装包发布仓库。项目源码保留在私有仓库，本仓库只包含下载说明、版本说明与校验文件。
 
-当前最新版本为 **[0.0.3](https://github.com/codehubcloud/hornet-remote-suite-release/releases/tag/v0.0.3)**。修复终端“编辑 → 复制 / 粘贴”的对象克隆错误，并增加终端内容右键菜单：复制、粘贴、全选、清屏和搜索。继续包含 Windows 安装版读取已有数据库时“后台服务退出”的修复；覆盖安装即可，原有连接与配置保留，不需要删除数据库。
+当前最新版本为 **[0.0.4](https://github.com/codehubcloud/hornet-remote-suite-release/releases/tag/v0.0.4)**。修复后台存活检测与 SFTP 错误处理，优化大文件完整 SHA-256 校验：服务器支持时在远端计算摘要，上传后无需回下载整个文件；不支持时自动回退流式校验。任务中心显示校验进度。继续包含终端复制/粘贴、右键菜单及历史数据库启动兼容性修复；覆盖安装即可，原有连接与配置保留，不需要删除数据库。
 
 从 [Releases](https://github.com/codehubcloud/hornet-remote-suite-release/releases) 下载，首个版本为 **0.0.1**。
 
