@@ -2,7 +2,7 @@
 
 Hornet Remote Suite 二进制安装包发布仓库。项目源码保留在私有仓库，本仓库只包含下载说明、版本说明与校验文件。
 
-当前最新版本为 **[0.0.6](https://github.com/codehubcloud/hornet-remote-suite-release/releases/tag/v0.0.6)**。采用新的蓝色渐变 Logo，统一 Windows 安装/卸载程序、应用和快捷方式、任务栏、窗口、macOS/Linux 应用图标以及“关于 Hornet”窗口。覆盖安装保留连接与配置。
+当前最新版本为 **[0.0.7](https://github.com/codehubcloud/hornet-remote-suite-release/releases/tag/v0.0.7)**。换用透明背景 Logo，标题菜单栏合并为顶部一行，移除独立白色标题栏及应用名称文字，保留系统原生窗口按钮、拖动、主题配色和工具栏折叠。各平台图标统一更新；覆盖安装保留连接与配置。
 
 继续包含后台无响应时的退出保障：关闭提示不再等待后台查询，取消后继续运行；确认退出后清理最多等待 5 秒，避免后台或界面卡住时迟迟无法退出。
 
