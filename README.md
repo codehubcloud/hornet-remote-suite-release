@@ -2,9 +2,11 @@
 
 Hornet Remote Suite 二进制安装包发布仓库，提供下载说明、版本说明和安装包。
 
-当前最新版本为 **[0.0.37](https://github.com/codehubcloud/hornet-remote-suite-release/releases/tag/v0.0.37)**。
+当前最新版本为 **[0.0.38](https://github.com/codehubcloud/hornet-remote-suite-release/releases/tag/v0.0.38)**。
 
-- **Linux 本地目录选择**：修复点击“选择本地目录”可能没有弹窗的问题，改用桌面的本地文件选择器；取消或返回空路径后可再次选择目录。
+- **标签拖动排序**：终端和文件标签可用鼠标拖动调整顺序，显示插入位置，靠近标签栏边缘时自动滚动；保留当前选中页、终端连接和文件视图。
+- **Linux 下划线显示**：修复终端文件名、命令行中的下划线可能被裁剪的问题，优化等宽字体回退，并同步修复离线回放。
+- **跨平台本地终端**：Linux/macOS 检测并启动已安装的 Bash、Zsh、Fish、sh，优先当前用户的 Shell；复制标签保留 Shell 与起始目录，Windows 保留 ConPTY 终端。
 
 其他功能：
 
@@ -33,7 +35,7 @@ Windows：`Get-FileHash <安装包路径> -Algorithm SHA256`。macOS：`shasum -
 
 AppImage 下载后需赋予执行权限：`chmod +x <安装包路径>`。DEB 适用于 Debian/Ubuntu。
 
-SSH/SFTP、FTP/FTPS、Telnet、会话管理、多语言和主题为通用能力。本地 PowerShell/CMD、串口、原生 RDP、VcXsrv 管理和系统打印提交目前使用 Windows 适配器；VcXsrv 需另行安装。尚未实现的 Xshell 功能仍显示为不可用，本软件不宣称完整覆盖其全部功能。
+SSH/SFTP、FTP/FTPS、Telnet、会话管理、多语言和主题为通用能力。本地 Shell 支持 Windows ConPTY 和 Linux/macOS Unix PTY；串口、原生 RDP、VcXsrv 管理和系统打印提交目前使用 Windows 适配器，VcXsrv 需另行安装。尚未实现的 Xshell 功能仍显示为不可用，本软件不宣称完整覆盖其全部功能。
 
 当前发行版未配置商业代码签名或 Apple 公证。
 
