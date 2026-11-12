@@ -2,7 +2,10 @@
 
 Hornet Remote Suite 二进制安装包发布仓库，提供下载说明、版本说明和安装包。
 
-当前最新版本为 **[0.0.39](https://github.com/codehubcloud/hornet-remote-suite-release/releases/tag/v0.0.39)**。
+当前最新版本为 **[0.0.40](https://github.com/codehubcloud/hornet-remote-suite-release/releases/tag/v0.0.40)**。
+
+- **本地终端文件栏**：Windows、Linux 和 macOS 默认显示左侧本地文件，从用户主目录打开，支持选择工作目录、隐藏/恢复与调整宽度。
+- **双侧右键文件操作**：本地文件支持上传、复制、粘贴、重命名、删除、新建目录和刷新；远端支持下载、重命名、权限和删除等操作，按协议和文件种类启用。支持 Shift+F10 键盘菜单，操作绑定右键目标。
 
 - **Linux 保存密码**：普通用户运行 AppImage 时，若系统密钥环不可用，可在首次保存时设置应用主密码，加密连接密码、身份验证凭据与私钥，无需 root 或 sudo。
 - **启动后解锁一次**：首次使用已保存凭据时输入主密码，同次运行可继续使用，也可手动锁定；取消或输入错误主密码不会覆盖已有数据。请牢记主密码，遗忘后无法恢复凭据。
