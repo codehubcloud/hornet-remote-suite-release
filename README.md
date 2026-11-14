@@ -43,6 +43,65 @@ Windows：`Get-FileHash <安装包路径> -Algorithm SHA256`。macOS：`shasum -
 
 AppImage 下载后需赋予执行权限：`chmod +x <安装包路径>`。DEB 适用于 Debian/Ubuntu。
 
+## Ubuntu 安装与 AppImage 启动
+
+Ubuntu 可安装发布页提供的 DEB，或使用 AppImage。x86_64 对应 `linux-amd64.deb` / `linux-x86_64.AppImage`，ARM64 对应 `linux-arm64.deb` / `linux-arm64.AppImage`。
+
+### 使用 DEB
+
+从 [v0.0.41 发布页](https://github.com/codehubcloud/hornet-remote-suite-release/releases/tag/v0.0.41) 下载对应架构的 DEB。在下载目录执行（以下为 x86_64）：
+
+```bash
+sudo apt install ./Hornet-Remote-Suite-0.0.41-linux-amd64.deb
+```
+
+安装后从应用菜单启动。DEB 不通过 AppImage 挂载，因此不需要 FUSE。
+
+### AppImage 提示缺少 libfuse.so.2
+
+`dlopen(): error loading libfuse.so.2` 表示 AppImage 的启动运行时缺少 FUSE 2 兼容库，错误发生在 Hornet 应用启动之前。系统已安装 FUSE 3 并不代表包含这个库。
+
+Ubuntu 24.04 及以上：
+
+```bash
+sudo apt update
+sudo apt install libfuse2t64
+```
+
+Ubuntu 22.04：
+
+```bash
+sudo apt update
+sudo apt install libfuse2
+```
+
+若 apt 找不到该包，先启用 Ubuntu 的 universe 软件源，再重试：
+
+```bash
+sudo add-apt-repository universe
+sudo apt update
+```
+
+安装兼容库即可，保留现有 `fuse3`；不要用安装 `fuse` 包或移除 `fuse3` 的方式处理。然后以普通用户运行：
+
+```bash
+chmod +x ./Hornet-Remote-Suite-0.0.41-linux-x86_64.AppImage
+./Hornet-Remote-Suite-0.0.41-linux-x86_64.AppImage
+```
+
+### 无需安装 FUSE 的启动方式
+
+可以提取应用后运行，不需要 sudo。在下载目录执行（生成 `squashfs-root` 目录，应使用没有同名目录的位置）：
+
+```bash
+./Hornet-Remote-Suite-0.0.41-linux-x86_64.AppImage --appimage-extract
+./squashfs-root/AppRun
+```
+
+解包后保留完整的 `squashfs-root` 目录，下次直接运行其中的 `AppRun` 即可。此方式绕过 FUSE 挂载，仍需满足系统图形运行库等应用依赖。
+
+参考：[AppImage 官方 FUSE 指引](https://github.com/AppImage/AppImageKit/wiki/FUSE)、[官方解包运行说明](https://docs.appimage.org/user-guide/troubleshooting/fuse.html#extract-and-run-type-2-appimages)。
+
 SSH/SFTP、FTP/FTPS、Telnet、会话管理、多语言和主题为通用能力。本地 Shell 支持 Windows ConPTY 和 Linux/macOS Unix PTY；串口、原生 RDP、VcXsrv 管理和系统打印提交目前使用 Windows 适配器，VcXsrv 需另行安装。尚未实现的 Xshell 功能仍显示为不可用，本软件不宣称完整覆盖其全部功能。
 
 当前发行版未配置商业代码签名或 Apple 公证。
