@@ -2,7 +2,14 @@
 
 Hornet Remote Suite 二进制安装包发布仓库，提供下载说明、版本说明和安装包。
 
-当前最新版本为 **[0.0.42](https://github.com/codehubcloud/hornet-remote-suite-release/releases/tag/v0.0.42)**。
+当前最新版本为 **[0.0.43](https://github.com/codehubcloud/hornet-remote-suite-release/releases/tag/v0.0.43)**。
+
+- **多行粘贴编辑**：终端多行粘贴先显示可编辑对话框，确认后只发送编辑内容，取消不发送。快捷键、菜单、右键和原生粘贴使用相同流程；Ctrl+Enter 确认，Esc 取消，保留缩进、空行及括号粘贴模式。
+- **可关闭的工作台标签**：工作台位于右侧，与终端及文件标签并列，支持 ×、关闭菜单和快捷键关闭。通过“查看 → 工作台”重新打开，重复打开不新增标签，关闭最后一页后保留空白工作区。
+- **连接管理器收起**：可向左收起并记忆状态，展开后恢复宽度、搜索和分组状态；连接远程会话或打开本地终端后保持侧栏显示状态。
+- **分屏标题去重**：终端和文件标题只显示在各自窗格顶部，工作台只出现在一个公共标签组中；切换和关闭工作台、调整侧栏与分屏保持活动会话及页面实例。后台滚动且标签位置不变时，标题菜单保持打开。
+
+继续包含：
 
 - **侧栏宽度调整**：拖动连接管理栏右侧边界调整宽度并自动记忆，双击恢复默认宽度。
 - **混合网格分割**：远程终端、本地终端及文件页签统一排列，5、6 个使用 2 行 3 列，7～9 个使用 3 行 3 列。新增或关闭页签自动适配；拖动页签到空格可移动，拖至已有格子可交换位置。
@@ -53,10 +60,10 @@ Ubuntu 可安装发布页提供的 DEB，或使用 AppImage。x86_64 对应 `lin
 
 ### 使用 DEB
 
-从 [v0.0.41 发布页](https://github.com/codehubcloud/hornet-remote-suite-release/releases/tag/v0.0.41) 下载对应架构的 DEB。在下载目录执行（以下为 x86_64）：
+从 [v0.0.43 发布页](https://github.com/codehubcloud/hornet-remote-suite-release/releases/tag/v0.0.43) 下载对应架构的 DEB。在下载目录执行（以下为 x86_64）：
 
 ```bash
-sudo apt install ./Hornet-Remote-Suite-0.0.41-linux-amd64.deb
+sudo apt install ./Hornet-Remote-Suite-0.0.43-linux-amd64.deb
 ```
 
 安装后从应用菜单启动。DEB 不通过 AppImage 挂载，因此不需要 FUSE。
@@ -89,8 +96,8 @@ sudo apt update
 安装兼容库即可，保留现有 `fuse3`；不要用安装 `fuse` 包或移除 `fuse3` 的方式处理。然后以普通用户运行：
 
 ```bash
-chmod +x ./Hornet-Remote-Suite-0.0.41-linux-x86_64.AppImage
-./Hornet-Remote-Suite-0.0.41-linux-x86_64.AppImage
+chmod +x ./Hornet-Remote-Suite-0.0.43-linux-x86_64.AppImage
+./Hornet-Remote-Suite-0.0.43-linux-x86_64.AppImage
 ```
 
 ### 无需安装 FUSE 的启动方式
@@ -98,7 +105,7 @@ chmod +x ./Hornet-Remote-Suite-0.0.41-linux-x86_64.AppImage
 可以提取应用后运行，不需要 sudo。在下载目录执行（生成 `squashfs-root` 目录，应使用没有同名目录的位置）：
 
 ```bash
-./Hornet-Remote-Suite-0.0.41-linux-x86_64.AppImage --appimage-extract
+./Hornet-Remote-Suite-0.0.43-linux-x86_64.AppImage --appimage-extract
 ./squashfs-root/AppRun
 ```
 
